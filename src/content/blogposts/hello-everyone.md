@@ -1,11 +1,11 @@
---------
-Title: My Website - Hello Everyone
-Author: Rickard Armiento
-Date: 2023-10-03
-Name: Hello Everyone
-Template: blogpost
-Base_template: base_default
---------
+---
+title: My Website - Hello Everyone
+author: Rickard Armiento
+date: 2023-10-03
+name: Hello Everyone
+template: blogpost
+base_template: base_default
+---
 
 Hello everyone
 ==============

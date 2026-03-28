@@ -1,6 +1,9 @@
-httk example website
---------------------
+Example Website With httk.web
+-----------------------------
 
-This repository is a simple example how to set up a website with a blog using the httkweb site generator. 
+This repository is a simple example of how to set up a website with a blog using
+``httk.web`` from ``httk-web``.
 
-Fork this repository, edit the contents under `src/content` and if you keep it on GitHub, edit the configuration to turn on "GitHub Pages" using "GitHub Actions" and the attached workflow in `.github/actions/httkweb.yaml` should automatically generate and publish the website.
+Fork this repository, edit the content under ``src/content``, and if you keep it
+on GitHub, enable GitHub Pages using GitHub Actions. The workflow in
+``.github/workflows/httkweb.yaml`` generates and publishes the website.

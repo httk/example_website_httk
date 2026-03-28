@@ -1,12 +1,12 @@
------------
-Title: My Website
-Name: Main
-Date: 2023-09-27
-Version: 1
-Author: Rickard Armiento
-Template: default
-Base_template: base_default
------------
+---
+title: My Website
+name: Main
+date: 2023-09-27
+version: 1
+author: Rickard Armiento
+template: default
+base_template: base_default
+---
 
 My website
 ==========

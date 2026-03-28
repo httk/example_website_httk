@@ -6,9 +6,9 @@
         <b>Latest blogposts</b>
         &nbsp;<br/>
         <ul>
-	  {blogposts_latest:repeat::
-          <li><a class="nav-link" href="{page.relbaseurl}/{{pages:call:{{item}}:relurl}}">{{pages:call:{{item}}:name}}</a></li>
-	  }
+          {% for item in blogposts_latest %}
+          <li><a class="nav-link" href="{{ page.relbaseurl }}/{{ pages(item, 'relurl') }}">{{ pages(item, 'name') }}</a></li>
+          {% endfor %}
         </ul>
       </div>
     </div>
@@ -16,12 +16,12 @@
   <div class="col" id="main">
     <div class="container">
       <main class="main-content">
-        {content}
+        {{ content }}
 
         <table class="table table-striped table-class" id="table-id">
-          {blogposts:repeat::
-          <tr><td><a class="nav-link" href="{page.relbaseurl}/{{pages:call:{{item}}:relurl}}"><b><i>{{pages:call:{{item}}:name}}</i></b> - {{pages:call:{{item}}:author}} ({{pages:call:{{item}}:date}})</i></b></a></td></tr>
-          }
+          {% for item in blogposts %}
+          <tr><td><a class="nav-link" href="{{ page.relbaseurl }}/{{ pages(item, 'relurl') }}"><b><i>{{ pages(item, 'name') }}</i></b> - {{ pages(item, 'author') }} ({{ pages(item, 'date') }})</a></td></tr>
+          {% endfor %}
         </table>
         <div class='pagination-container' >
           <nav aria-label="Page navigation example">
@@ -43,4 +43,4 @@
     </div>
   </div>
 </div>
-<script src="{page.relbaseurl}/js/paginate.js"></script>
+<script src="{{ page.relbaseurl }}/js/paginate.js"></script>

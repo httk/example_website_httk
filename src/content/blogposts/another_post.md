@@ -1,11 +1,11 @@
---------
-Title: My Website - Another post
-Author: Rickard Armiento
-Date: 2023-10-04
-Name: Another post
-Template: blogpost
-Base_template: base_default
---------
+---
+title: My Website - Another post
+author: Rickard Armiento
+date: 2023-10-04
+name: Another post
+template: blogpost
+base_template: base_default
+---
 
 Another post
 ============

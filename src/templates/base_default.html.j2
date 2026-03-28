@@ -2,8 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>{page.title}</title>
-    <link href="{page.relbaseurl}/resources/css/httk.css" rel="stylesheet"/>
+    <title>{{ page.title or title }}</title>
+    <link href="{{ page.relbaseurl }}/resources/css/httk.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css" crossorigin="anonymous"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/default.min.css"/>
     <link rel="icon" href="favicon.ico"/>
@@ -13,31 +13,31 @@
   </head>
   <body>
     <nav class="navbar navbar-custom navbar-expand-md navbar-static-top border-bottom border-3 border-darkgrey">
-      <a href="{page.relbaseurl}/"><b>{maintitle}</b></a>
+      <a href="{{ page.relbaseurl }}/"><b>{{ maintitle }}</b></a>
       <div class="collapse navbar-collapse">
-	<ul class="navbar-nav nav ml-auto">
-	  {menuitems:repeat::
-            <li class="nav-item">
-              <a class="nav-link" href="{page.relbaseurl}/{{pages:call:{{item}}:relurl}}">{{pages:call:{{item}}:name}}</a>
-            </li>
-	  }
-	</ul>
+        <ul class="navbar-nav nav ml-auto">
+          {% for item in menuitems %}
+          <li class="nav-item">
+            <a class="nav-link" href="{{ page.relbaseurl }}/{{ pages(item, 'relurl') }}">{{ pages(item, 'name') }}</a>
+          </li>
+          {% endfor %}
+        </ul>
       </div>
     </nav>
 </section>
 <div class="container">
-{content}
+{{ content }}
 </div>
 <script src="https://kit.fontawesome.com/3d11bda958.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/mathtex-script-type.min.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js"></script>
 <script>
-  document.addEventListener('DOMContentLoaded', (event) => {{
-      document.querySelectorAll('pre.code').forEach((block) => {{
+  document.addEventListener('DOMContentLoaded', (event) => {
+      document.querySelectorAll('pre.code').forEach((block) => {
           hljs.highlightBlock(block);
-      }});
-  }});
+      });
+  });
 </script>
 </body>
 </html>

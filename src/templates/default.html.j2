@@ -6,9 +6,9 @@
         <b>Latest blogposts</b>
         &nbsp;<br/>
         <ul>
-	  {blogposts_latest:repeat::
-          <li><a class="nav-link" href="{page.relbaseurl}/{{pages:call:{{item}}:relurl}}">{{pages:call:{{item}}:name}}</a></li>
-	  }
+          {% for item in blogposts_latest %}
+          <li><a class="nav-link" href="{{ page.relbaseurl }}/{{ pages(item, 'relurl') }}">{{ pages(item, 'name') }}</a></li>
+          {% endfor %}
         </ul>
       </div>
     </div>
@@ -16,7 +16,7 @@
   <div class="col" id="main">
     <div class="container">
       <main class="main-content">
-        {content}
+        {{ content }}
       </main>
     </div>
   </div>
