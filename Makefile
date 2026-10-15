@@ -19,13 +19,11 @@ clean:
 	find . -name "__pycache__" -print0 | xargs -0 rm -rf
 
 format:
-	$(PYTHON) -m ruff check src examples --select F401 --fix
-	$(PYTHON) -m isort src
-	$(PYTHON) -m black src
+	$(PYTHON) -m ruff check src --fix
+	$(PYTHON) -m ruff format src
 
 format-check:
-	$(PYTHON) -m isort --check-only src
-	$(PYTHON) -m black --check src
+	$(PYTHON) -m ruff format --check src
 
 lint:
 	$(PYTHON) -m ruff check src
