@@ -19,14 +19,14 @@ clean:
 	find . -name "__pycache__" -print0 | xargs -0 rm -rf
 
 format:
-	$(PYTHON) -m ruff check src --fix
-	$(PYTHON) -m ruff format src
+	$(PYTHON) -m ruff check src tests --fix
+	$(PYTHON) -m ruff format src tests
 
 format-check:
-	$(PYTHON) -m ruff format --check src
+	$(PYTHON) -m ruff format --check src tests
 
 lint:
-	$(PYTHON) -m ruff check src
+	$(PYTHON) -m ruff check src tests
 
 typecheck_pyright:
 	$(PYTHON) -m pyright
